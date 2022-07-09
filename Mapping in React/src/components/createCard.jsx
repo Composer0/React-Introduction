@@ -14,11 +14,4 @@ function CreateCard(contact) {
   
   }
 
-  function ID() {
-    <div>
-  <p>{props.id}</p>
-
-    </div>
-  }
-
   export default CreateCard;
