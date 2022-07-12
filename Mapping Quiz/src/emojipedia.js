@@ -1,6 +1,7 @@
 const emojipedia = [
   {
     id: 1,
+    ariaLabel: "Tense Biceps",
     emoji: "💪",
     name: "Tense Biceps",
     meaning:
@@ -8,6 +9,7 @@ const emojipedia = [
   },
   {
     id: 2,
+    ariaLabel: "Person With Folded Hands",
     emoji: "🙏",
     name: "Person With Folded Hands",
     meaning:
@@ -15,9 +17,12 @@ const emojipedia = [
   },
   {
     id: 3,
+    ariaLabel: "Rolling On The Floor, Laughing",
     emoji: "🤣",
     name: "Rolling On The Floor, Laughing",
     meaning:
       "This is funny! A smiley face, rolling on the floor, laughing. The face is laughing boundlessly. The emoji version of “rofl“. Stands for „rolling on the floor, laughing“."
   }
 ];
+
+export default emojipedia;
