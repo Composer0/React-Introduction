@@ -7,13 +7,18 @@
 
 // const [animal, makeSound] = useAnimals(cat);
 // console.log(animal);
-// makeSound();
+// makeSound();  makeSound is just what we are naming the function. It was not assigned earlier. when creating an array variable such as this the first attribute is the objects while the second is the function. Function in this case is useAnimals... the default name which is being set as a variable, the actions of the function makesound are what is occurring.
 
 // //Destructuring Objects
-// // const { name, sound} = cat;
-// // const { name: catName, sound: catSound } = cat;
-// // const { name = "Fluffy", sound = "Purr" } = cat;
-// // const {feedingRequirements: {food, water} } = cat;
+// // const { name, sound, feedingRequirements} = cat;
+
+// // const { name: catName, sound: catSound } = cat; this allows you to redifine the names of the object properties.
+
+// // const { name = "Fluffy", sound = "Purr" } = cat; redefines the properties/values inside the object. This only changes if the original object does not have an assigned property.
+
+// // const {name, sound, feedingRequirements: {food, water} } = cat; displaying a object with properties.
+
+// // const {feedingRequirements: {food, water} } = cat; displaying a object with properties.
 // // console.log(food);
 
 // CHALLENGE: uncomment the code below and see the car stats rendered
