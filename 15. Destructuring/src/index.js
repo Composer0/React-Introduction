@@ -37,23 +37,35 @@ const {
   coloursByPopularity: [teslaTopColour]
 } = tesla;
 
+const {
+  speedStats: { zeroToSixty: hondaZeroToSixty}
+} = honda;
+const {
+  speedStats: { zeroToSixty: teslaZeroToSixty}
+} = tesla;
+
 ReactDOM.render(
   <table>
-    <tr>
-      <th>Brand</th>
-      <th>Top Speed</th>
-      <th>Top Colour</th>
-    </tr>
-    <tr>
-      <td>{tesla.model}</td>
-      <td>{teslaTopSpeed}</td>
-      <td>{teslaTopColour}</td>
-    </tr>
-    <tr>
-      <td>{honda.model}</td>
-      <td>{hondaTopSpeed}</td>
-      <td>{hondaTopColour}</td>
-    </tr>
+  <tbody>
+      <tr>
+        <th>Brand</th>
+        <th>Top Speed</th>
+        <th>Top Colour</th>
+        <th>Zero to Sixty</th>
+      </tr>
+      <tr>
+        <td>{tesla.model}</td>
+        <td>{teslaTopSpeed}</td>
+        <td>{teslaTopColour}</td>
+        <td>{teslaZeroToSixty}</td>
+      </tr>
+      <tr>
+        <td>{honda.model}</td>
+        <td>{hondaTopSpeed}</td>
+        <td>{hondaTopColour}</td>
+        <td>{hondaZeroToSixty}</td>
+      </tr>
+    </tbody>
   </table>,
   document.getElementById("root")
 );
