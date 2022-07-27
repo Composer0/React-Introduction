@@ -36,10 +36,10 @@ const {
 } = tesla;
 
 const {
-  coloursByPopularity: [hondaTopColour]
+  coloursByPopularity: [hondaTopColour, hondaSecondColor]
 } = honda;
 const {
-  coloursByPopularity: [teslaTopColour]
+  coloursByPopularity: [teslaTopColour, teslaSecondColor]
 } = tesla;
 
 const {
