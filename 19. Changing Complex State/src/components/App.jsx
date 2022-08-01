@@ -11,8 +11,14 @@ function App() {
   const [isMousedOver, setMouseOver] = useState(false);
 
   function handleChange(event) {
-    const newValue = event.target.value;
-    const inputName = event.target.name;
+    // const newValue = event.target.value;
+    // const inputName = event.target.name;
+
+
+    const {value, name} = event.target; //This technique just simplifies the game immensely. We reduce two consts to one by target the properties of the input: value and name. Destructuring. Remember that this process is referred to as destructuring.
+
+    //****Warning do not try to access the event or anything related to the event inside a stateful setter.****
+    // https://reactjs.org/docs/events.html Synthetic Events recommended reading.
 
     // if (inputName === "fName") {
     //   setFullName({fName: newValue}, );
@@ -22,15 +28,15 @@ function App() {
 
     setFullName(prevValue => {
       console.log(prevValue);
-      if (inputName === "fName") {
+      if (name === "fName") {
         return {
-          fName: newValue,
+          fName: value,
           lName: prevValue.lName
         }
-      } else if (inputName === "lName") {
+      } else if (name === "lName") {
           return {
             fName: prevValue.fName,
-            lName: newValue
+            lName: value
           }
         }
       }
