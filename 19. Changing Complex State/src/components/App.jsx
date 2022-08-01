@@ -4,6 +4,7 @@ function App() {
 
   const [fullName, setFullName] = useState({
     fName: "",
+    mName: "",
     lName: ""
   });
 
@@ -31,11 +32,19 @@ function App() {
       if (name === "fName") {
         return {
           fName: value,
+          mName: prevValue.mName,
           lName: prevValue.lName
         }
-      } else if (name === "lName") {
+      } else if (name === "mName") {
           return {
             fName: prevValue.fName,
+            mName: value,
+            lName: prevValue.lName
+          }
+        } else if (name === "lName") {
+          return {
+            fName: prevValue.fName,
+            mName: prevValue.mName,
             lName: value
           }
         }
@@ -59,7 +68,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Hello {fullName.fName} {fullName.lName}</h1>
+      <h1>Hello {fullName.fName} {fullName.mName} {fullName.lName}</h1>
       <form onSubmit={handleClick}>
 
         <input 
@@ -67,6 +76,13 @@ function App() {
           placeholder="First Name" 
           onChange={handleChange}
           value={fullName.fName}
+        />
+
+        <input 
+          name="mName" 
+          placeholder="Middle Name" 
+          onChange={handleChange}
+          value={fullName.mName}
         />
 
         <input 
