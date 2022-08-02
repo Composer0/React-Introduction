@@ -21,6 +21,34 @@ function App() {
     setMouseOver(false);
   }
 
+  function handleChange(event) {
+    const {value, name} = event.target;
+
+    setContact(prevValue => {
+      console.log(prevValue);
+      if (name === "fName") {
+        return {
+          fName: value,
+          lName: prevValue.lName,
+          email: prevValue.email
+        }
+        } else if (name === "lName") {
+          return {
+            fName: prevValue.fName,
+            lName: value,
+            email: prevValue.email
+        }
+      } else if (name === "email") {
+        return {
+          fName: prevValue.fName,
+          lName: prevValue.lName,
+          email: value
+      }
+    }
+  }
+  )
+}
+
   return (
     <form onChange={handleClick}>
 
@@ -30,9 +58,15 @@ function App() {
       </h1>
       <p>{contact.email}</p>
       <form>
-        <input name="fName" placeholder="First Name" />
-        <input name="lName" placeholder="Last Name" />
-        <input name="email" placeholder="Email" />
+        <input name="fName" placeholder="First Name" 
+          onChange={handleChange} value={contact.fName}
+        />
+        <input name="lName" placeholder="Last Name" 
+          onChange={handleChange} value={contact.lName}
+        />
+        <input name="email" placeholder="Email" 
+          onChange={handleChange} value={contact.email}
+        />
         <button
         style = {{backgroundColor: isMouseOver ? "black" : "white"}}
         type = "submit"
@@ -44,5 +78,6 @@ function App() {
     </form>
   );
 }
+
 
 export default App;
