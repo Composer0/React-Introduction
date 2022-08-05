@@ -3,62 +3,44 @@ import React, {useState} from "react";
 function App() {
 
 
-const [item, setItem] = useState({
-  item: "",
-})
+const [item, setItem] = useState("")
 
-const [newItem, setNewItem] = useState("");
+const [newItem, setNewItem] = useState([]);
 
 function handleChange(event) {
-  const {value, iName} = event.target;
-  
-  setItem(prevValue => {
-    console.log(prevValue);
-    if (iName === "item") {
-      return {
-        item: value,
-      }
-    } else {
-      return {
-        item: prevValue.iName
-      }
-    }
+  const newValue = event.target.value;
+  setItem(newValue)
+}
+
+function handleClick() {
+  setNewItem((prevValues) => {
+    return [...prevValues, item];
   })
+  setItem("")
 }
-
-function handleClick(event) {
-  event.preventDefault();
-  return setNewItem === item;
-}
-
-function addItem() {
-  return newItem;
-}
-console.log(newItem);
 
 
   return (
-    <form onChange={handleClick}>
+    // <form onChange={handleClick}>
 
     <div className="container">
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
       <div className="form">
-        <input type="text" />
-        <button onChange={handleChange} onClick={addItem}>
-        <p>{item.item}</p>
+      <input onChange={handleChange} type="text" placeholder="Enter Item Here" value={item}
+      />
+        <button onClick={handleClick}>
           <span>Add</span>
         </button>
       </div>
       <div>
         <ul>
-          {newItem}
-          <li>A Item</li>
+          {newItem.map(todoItems => <li>{todoItems}</li>)}
         </ul>
       </div>
     </div>
-    </form>
+    // </form>
   );
 }
 
