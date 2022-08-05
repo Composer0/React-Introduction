@@ -16,9 +16,9 @@ const fullName = {
 }
 
 const user = {
-    ...fullName,
     id: 1,
+    ...fullName,
     username: "jamesbond007"
-}
+}//spread operator in an object.
 
 console.log(user);
