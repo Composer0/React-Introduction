@@ -11,26 +11,12 @@ function App() {
     const { name, value } = event.target;
 
     setContact(prevValue => {
-      if (name === "fName") {
-        return {
-          fName: value,
-          lName: prevValue.lName,
-          email: prevValue.email
-        };
-      } else if (name === "lName") {
-        return {
-          fName: prevValue.fName,
-          lName: value,
-          email: prevValue.email
-        };
-      } else if (name === "email") {
-        return {
-          fName: prevValue.fName,
-          lName: prevValue.lName,
-          email: value
-        };
+      return {
+        ...prevValue,
+        [name]: value //without name being placed in an array, it will not be read as intended. The array grabs the value of the variable.
       }
-    });
+      }
+    );
   }
 
   return (
